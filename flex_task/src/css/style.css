@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+#flexbox {
+    margin: 30px 0;
+    display: flex;
+}
+
+.flex_item {
+    width: calc(100% / 3);
+    position: relative;
+    height: 500px;
+    transition: .8s ease-in-out;
+    overflow: hidden;
+}
+
+.flex_item img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.flex_item:hover{
+    width: 1500px;
+}
+
+.flex_item:hover .inner_items{
+    transform: translateY(-70px);
+}
+
+.flex_item:hover h1{
+    font-size: 44px;
+    font-weight: bold;
+}
+
+.flex_item:hover .inner_transition{
+    opacity: 1;
+}
+
+.inner_items {
+    position: absolute;
+    top: 250px;
+    left: 30px;
+    transition: .4s ease-in-out;
+}
+
+.inner_transition {
+    opacity: 0;
+    transition: .4s ease-in-out;
+}
+
+p {
+    width: 400px;
+    height: auto;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 20px;
+    transition: .4s ease-in-out;
+}
+
+button {
+    color: white;
+    background-color: #f26f21;
+    border-color: transparent;
+    border-radius: 3px;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+/* yarimciq qalan hisse (responsivlik) */
+
+@media(max-width: 768px){
+    #flexbox{
+        flex-direction: column;
+    }
+
+    .flex_item {
+        width: 100%;
+        height: 300px;
+        transition: .4s ease-in-out;
+    }
+
+    .flex_item img {
+        height: 300px;
+        width: 100%;
+        transition: .4s ease-in-out;
+    }
+
+    .flex_item:hover{
+        height: 500px;
+        width: 100%;
+    }
+
+    .flex_item:hover img{
+        height: 500px;
+        width: 100%;
+    }
+
+    .flex_item:hover .inner_items{
+        transform: translateY(100px);
+    }
+
+    .inner_items {
+        position: absolute;
+        top: 150px;
+        left: 5px;
+    }
+
+    p {
+        width: 300px;
+    }
+}
